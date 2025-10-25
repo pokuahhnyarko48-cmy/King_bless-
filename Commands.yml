@@ -6,8 +6,10 @@ cd king_bless
 
 nano king_bless.py
 
-after writing the script 👇👇👇👇👇😱 
+after the script 👇👇👇👇👇😱 
 
-chmod +x hacking_calculator.py
+chmod +x king_bless.py
+
+ls
 
 python king_bless.py
