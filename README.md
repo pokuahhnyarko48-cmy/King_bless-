@@ -9,3 +9,6 @@ See SAFETY.md for rules and an auditable consent pattern.
 
 This repository is for research, learning, and defensive automation.  
 **Do not** use any scripts here against devices or networks you do not own or have explicit written permission to test. Misuse is illegal and unethical.
+
+Developed by @Kingsley nyarko
+Deployed by @King_bless ☠️😈🤖💥😎
