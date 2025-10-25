@@ -1,0 +1,13 @@
+pkg update && pkg upgrade -y
+
+mkdir king_bless
+
+cd king_bless
+
+nano king_bless.py
+
+after writing the script 👇👇👇👇👇😱 
+
+chmod +x hacking_calculator.py
+
+python king_bless.py
