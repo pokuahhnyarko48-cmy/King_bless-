@@ -1,0 +1,84 @@
+import hashlib
+import base64
+
+def banner():
+    print("""
+  _   _            _       _             
+ | | | | __ _  ___| | ____| | ___   __ _ 
+ | |_| |/ _` |/ __| |/ / _` |/ _ \ / _` |
+ |  _  | (_| | (__|   < (_| | (_) | (_| |
+ |_| |_|\__,_|\___|_|\_\__,_|\___/ \__, |
+                                   |___/ 
+ [HACKING CALCULATOR] - For educational use only!
+    """)
+
+def basic_calc():
+    expr = input("Enter expression (e.g. 2+2*3): ")
+    try:
+        result = eval(expr, {"__builtins__":None}, {})
+        print("Result:", result)
+    except:
+        print("Invalid expression.")
+
+def base_conv():
+    num = input("Enter number: ")
+    base = input("Convert to base (bin/oct/hex): ").strip().lower()
+    try:
+        n = int(num)
+        if base == "bin":
+            print(bin(n))
+        elif base == "oct":
+            print(oct(n))
+        elif base == "hex":
+            print(hex(n))
+        else:
+            print("Unknown base.")
+    except:
+        print("Invalid input.")
+
+def hash_gen():
+    data = input("Enter string to hash: ")
+    print("MD5:   ", hashlib.md5(data.encode()).hexdigest())
+    print("SHA1:  ", hashlib.sha1(data.encode()).hexdigest())
+    print("SHA256:", hashlib.sha256(data.encode()).hexdigest())
+
+def base64_tools():
+    mode = input("Encode or decode? (e/d): ").strip().lower()
+    data = input("Enter string: ")
+    if mode == "e":
+        enc = base64.b64encode(data.encode()).decode()
+        print("Encoded:", enc)
+    else:
+        try:
+            dec = base64.b64decode(data.encode()).decode()
+            print("Decoded:", dec)
+        except:
+            print("Decoding error.")
+
+def main():
+    banner()
+    while True:
+        print("""
+1. Basic Calculator
+2. Base Conversion
+3. Hash Generator (MD5, SHA1, SHA256)
+4. Base64 Encode/Decode
+0. Exit
+""")
+        opt = input("Select option: ")
+        if opt == "1":
+            basic_calc()
+        elif opt == "2":
+            base_conv()
+        elif opt == "3":
+            hash_gen()
+        elif opt == "4":
+            base64_tools()
+        elif opt == "0":
+            print("Goodbye!")
+            break
+        else:
+            print("Invalid option.")
+
+if __name__ == "__main__":
+    main()
